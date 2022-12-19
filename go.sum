@@ -1250,6 +1250,8 @@ github.com/ribasushi/go-libp2p-infomempeerstore v0.0.0-20221218110755-f8d466659c
 github.com/ribasushi/go-libp2p-infomempeerstore v0.0.0-20221218110755-f8d466659cad/go.mod h1:ZGZmcnU98QFKOegFFGFdRSXezectpR9l0BaFOu6EGRk=
 github.com/ribasushi/go-toolbox v0.0.0-20221218102252-e0bdf45a22b7 h1:qz0f4/G9jyRctIRD34lLrXxvz3lVhEz0+9ChBJ08cuk=
 github.com/ribasushi/go-toolbox v0.0.0-20221218102252-e0bdf45a22b7/go.mod h1:D6B3XYZOoKn8bn1Z67Z6/bBeFA17YwTr+QSJTbevJII=
+github.com/ribasushi/go-toolbox v0.0.0-20221219064231-5f7b135d92fc h1:SPRdtKUSjEMDmV35wfsoZNusPU/RISCPkvS1XFojONY=
+github.com/ribasushi/go-toolbox v0.0.0-20221219064231-5f7b135d92fc/go.mod h1:D6B3XYZOoKn8bn1Z67Z6/bBeFA17YwTr+QSJTbevJII=
 github.com/rogpeppe/fastuuid v0.0.0-20150106093220-6724a57986af/go.mod h1:XWv6SoW27p1b0cqNHllgS5HIMJraePCO15w5zCzIWYg=
 github.com/rogpeppe/fastuuid v1.2.0/go.mod h1:jVj6XXZzXRy/MSR5jhDC/2q6DgLz+nrA6LYCDYWNEvQ=
 github.com/rogpeppe/go-internal v1.3.0/go.mod h1:M8bDsm7K2OlrFYOpmOWEs/qY81heoFRclV5y23lUDJ4=

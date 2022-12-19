@@ -1,4 +1,4 @@
-package fil //nolint:revive
+package fil
 
 import (
 	"context"
