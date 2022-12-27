@@ -9,6 +9,7 @@ require (
 	github.com/filecoin-project/go-state-types v0.9.9
 	github.com/filecoin-project/lotus v1.18.2
 	github.com/libp2p/go-libp2p v0.23.4
+	github.com/multiformats/go-varint v0.0.7
 	github.com/ribasushi/go-libp2p-infomempeerstore v0.0.0-20221218110755-f8d466659cad
 	github.com/ribasushi/go-toolbox v0.0.0-20221219064231-5f7b135d92fc
 	golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2
@@ -142,7 +143,6 @@ require (
 	github.com/multiformats/go-multicodec v0.7.0 // indirect
 	github.com/multiformats/go-multihash v0.2.1 // indirect
 	github.com/multiformats/go-multistream v0.3.3 // indirect
-	github.com/multiformats/go-varint v0.0.7 // indirect
 	github.com/nkovacs/streamquote v1.0.0 // indirect
 	github.com/nxadm/tail v1.4.8 // indirect
 	github.com/onsi/ginkgo v1.16.5 // indirect
