@@ -38,7 +38,7 @@ func NewPlainNodeTCP(withTimeout time.Duration) (lp2phost.Host, *infomempeerstor
 		lp2p.Peerstore(ps),  // allows us collect random on-connect data
 		lp2p.RandomIdentity, // *NEVER* reuse a peerid
 		lp2p.DisableRelay(),
-		lp2p.ResourceManager(lp2pnet.NullResourceManager),
+		lp2p.ResourceManager(&lp2pnet.NullResourceManager{}),
 		lp2p.ConnectionManager(connmgr),
 		lp2p.Ping(false),
 		lp2p.NoListenAddrs,

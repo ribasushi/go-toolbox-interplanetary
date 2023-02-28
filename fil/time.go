@@ -6,7 +6,6 @@ import (
 
 	filabi "github.com/filecoin-project/go-state-types/abi"
 	filbuiltin "github.com/filecoin-project/go-state-types/builtin"
-	lotusapi "github.com/filecoin-project/lotus/api"
 	lotusbuild "github.com/filecoin-project/lotus/build"
 	lotustypes "github.com/filecoin-project/lotus/chain/types"
 	"golang.org/x/xerrors"
@@ -22,7 +21,7 @@ func WallTimeEpoch(t time.Time) filabi.ChainEpoch { //nolint:revive
 	return filabi.ChainEpoch(t.Unix()-FilGenesisUnix) / filbuiltin.EpochDurationSeconds
 }
 
-func GetTipset(ctx context.Context, lapi *lotusapi.FullNodeStruct, lookback filabi.ChainEpoch) (*lotustypes.TipSet, error) { //nolint:revive
+func GetTipset(ctx context.Context, lapi *LotusAPIClient, lookback filabi.ChainEpoch) (*lotustypes.TipSet, error) { //nolint:revive
 	latestHead, err := lapi.ChainHead(ctx)
 	if err != nil {
 		return nil, xerrors.Errorf("failed getting chain head: %w", err)

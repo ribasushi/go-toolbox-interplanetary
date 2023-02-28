@@ -6,10 +6,18 @@ import (
 	"time"
 
 	"github.com/filecoin-project/go-jsonrpc"
-	lotusapi "github.com/filecoin-project/lotus/api"
+	"github.com/filecoin-project/lotus/api/v0api"
+	lotustypes "github.com/filecoin-project/lotus/chain/types"
 )
 
-func LotusAPIClientV0(ctx context.Context, url string, timeoutSecs int, bearerToken string) (*lotusapi.FullNodeStruct, jsonrpc.ClientCloser, error) { //nolint:revive
+type (
+	LotusAPIClient   = v0api.FullNodeStruct
+	LotusBeaconEntry = lotustypes.BeaconEntry
+	LotusTS          = lotustypes.TipSet
+	LotusTSK         = lotustypes.TipSetKey
+)
+
+func LotusAPIClientV0(ctx context.Context, url string, timeoutSecs int, bearerToken string) (*LotusAPIClient, jsonrpc.ClientCloser, error) { //nolint:revive
 	if timeoutSecs == 0 {
 		timeoutSecs = 30
 	}
@@ -17,7 +25,7 @@ func LotusAPIClientV0(ctx context.Context, url string, timeoutSecs int, bearerTo
 	if bearerToken != "" {
 		hdr["Authorization"] = []string{"Bearer " + bearerToken}
 	}
-	c := new(lotusapi.FullNodeStruct)
+	c := new(v0api.FullNodeStruct)
 	closer, err := jsonrpc.NewMergeClient(
 		ctx,
 		url+"/rpc/v0",
