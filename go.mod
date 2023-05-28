@@ -1,6 +1,6 @@
 module github.com/ribasushi/go-toolbox-interplanetary
 
-go 1.19
+go 1.20
 
 require (
 	github.com/filecoin-project/go-address v1.1.0
@@ -9,6 +9,8 @@ require (
 	github.com/filecoin-project/go-state-types v0.11.1
 	github.com/filecoin-project/lotus v1.23.0
 	github.com/libp2p/go-libp2p v0.27.3
+	github.com/libp2p/go-yamux/v4 v4.0.0
+	github.com/multiformats/go-multiaddr v0.9.0
 	github.com/ribasushi/go-libp2p-infomempeerstore v0.0.0-20230526165631-c0c026a0496f
 	github.com/ribasushi/go-toolbox v0.0.0-20230526155448-9d3735c77078
 	golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2
@@ -119,7 +121,6 @@ require (
 	github.com/libp2p/go-nat v0.1.0 // indirect
 	github.com/libp2p/go-netroute v0.2.1 // indirect
 	github.com/libp2p/go-reuseport v0.3.0 // indirect
-	github.com/libp2p/go-yamux/v4 v4.0.0 // indirect
 	github.com/magefile/mage v1.15.0 // indirect
 	github.com/marten-seemann/tcp v0.0.0-20210406111302-dfbc87cc63fd // indirect
 	github.com/mattn/go-isatty v0.0.19 // indirect
@@ -133,7 +134,6 @@ require (
 	github.com/mr-tron/base58 v1.2.0 // indirect
 	github.com/multiformats/go-base32 v0.1.0 // indirect
 	github.com/multiformats/go-base36 v0.2.0 // indirect
-	github.com/multiformats/go-multiaddr v0.9.0 // indirect
 	github.com/multiformats/go-multiaddr-dns v0.3.1 // indirect
 	github.com/multiformats/go-multiaddr-fmt v0.1.0 // indirect
 	github.com/multiformats/go-multibase v0.2.0 // indirect
