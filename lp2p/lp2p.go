@@ -9,7 +9,6 @@ import (
 	"time"
 
 	cborutil "github.com/filecoin-project/go-cbor-util"
-	lotusbuild "github.com/filecoin-project/lotus/build"
 	lp2p "github.com/libp2p/go-libp2p"
 	lp2phost "github.com/libp2p/go-libp2p/core/host"
 	lp2pnet "github.com/libp2p/go-libp2p/core/network"
@@ -82,7 +81,7 @@ func NewPlainNodeTCP(withTimeout time.Duration) (lp2phost.Host, *infomempeerstor
 		lp2p.NoTransports,
 		lp2p.Transport(lp2ptcp.NewTCPTransport, lp2ptcp.WithConnectionTimeout(withTimeout+100*time.Millisecond)),
 		lp2p.Security(lp2ptls.ID, lp2ptls.New),
-		lp2p.UserAgent("lotus-"+lotusbuild.BuildVersion+lotusbuild.BuildTypeString()),
+		lp2p.UserAgent("interplanetary-toolbox"),
 		lp2p.WithDialTimeout(withTimeout),
 		lp2p.Muxer(lp2pyamux.ID, (*lp2pyamux.Transport)(yc)),
 	)

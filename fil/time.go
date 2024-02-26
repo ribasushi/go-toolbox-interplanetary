@@ -6,14 +6,16 @@ import (
 
 	filabi "github.com/filecoin-project/go-state-types/abi"
 	filbuiltin "github.com/filecoin-project/go-state-types/builtin"
-	lotusbuild "github.com/filecoin-project/lotus/build"
 	lotustypes "github.com/filecoin-project/lotus/chain/types"
 	"golang.org/x/xerrors"
 )
 
 const FilGenesisUnix = 1598306400 //nolint:revive
 
-var APIMaxTipsetsBehind = uint64(4) // APIMaxTipsetsBehind should not be set too low: a nul tipset is indistinguishable from loss of sync
+var (
+	PropagationDelaySecs = uint64(10) // PropagationDelaySecs corresponds to https://github.com/filecoin-project/lotus/blob/v1.25.2/build/params_mainnet.go#L113
+	APIMaxTipsetsBehind  = uint64(4)  // APIMaxTipsetsBehind should not be set too low: a nul tipset is indistinguishable from loss of sync
+)
 
 func MainnetTime(e filabi.ChainEpoch) time.Time { return time.Unix(int64(e)*30+FilGenesisUnix, 0) } //nolint:revive
 
@@ -32,7 +34,7 @@ func GetTipset(ctx context.Context, lapi *LotusAPIClient, lookback filabi.ChainE
 
 	if wallUnix < filUnix-2 || // allow couple seconds clock-drift tolerance
 		wallUnix > filUnix+int64(
-			lotusbuild.PropagationDelaySecs+(APIMaxTipsetsBehind*filbuiltin.EpochDurationSeconds),
+			PropagationDelaySecs+(APIMaxTipsetsBehind*filbuiltin.EpochDurationSeconds),
 		) {
 		return nil, xerrors.Errorf(
 			"lotus API out of sync: chainHead reports unixtime %d (height: %d) while walltime is %d (delta: %s)",
