@@ -23,7 +23,7 @@ func WallTimeEpoch(t time.Time) filabi.ChainEpoch { //nolint:revive
 	return filabi.ChainEpoch(t.Unix()-FilGenesisUnix) / filbuiltin.EpochDurationSeconds
 }
 
-func GetTipset(ctx context.Context, lapi *LotusAPIClient, lookback filabi.ChainEpoch) (*lotustypes.TipSet, error) { //nolint:revive
+func GetTipset(ctx context.Context, lapi LotusDaemonAPIClientV0, lookback filabi.ChainEpoch) (*lotustypes.TipSet, error) { //nolint:revive
 	latestHead, err := lapi.ChainHead(ctx)
 	if err != nil {
 		return nil, xerrors.Errorf("failed getting chain head: %w", err)
